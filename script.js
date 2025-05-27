@@ -293,9 +293,10 @@ class HelloWorldApp {
         if (!resultElement) return;
 
         const formatResult = (result) => {
+            const fortuneLevel = result.運勢レベル;
             return `
-                <div class="fortune-result">
-                    <h3>🎋 ${result.運勢レベル} 🎋</h3>
+                <div class="fortune-result level-${fortuneLevel}">
+                    <h3>🎋 ${fortuneLevel} 🎋</h3>
                     <div class="detailed-fortune">
                         <h4>詳細運勢:</h4>
                         <ul>
@@ -318,6 +319,21 @@ class HelloWorldApp {
         };
 
         resultElement.innerHTML = formatResult(result);
+        
+        // Add entrance animation for the new result
+        const fortuneResultDiv = resultElement.querySelector('.fortune-result');
+        if (fortuneResultDiv) {
+            fortuneResultDiv.style.opacity = '0';
+            fortuneResultDiv.style.transform = 'translateY(20px)';
+            
+            // Trigger animation after a brief delay
+            setTimeout(() => {
+                fortuneResultDiv.style.transition = 'all 0.5s ease-out';
+                fortuneResultDiv.style.opacity = '1';
+                fortuneResultDiv.style.transform = 'translateY(0)';
+            }, 100);
+        }
+        
         resultElement.scrollIntoView({ behavior: 'smooth' });
     }
 
