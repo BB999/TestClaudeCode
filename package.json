@@ -1,7 +1,7 @@
 {
   "name": "hello-world-webapp",
   "version": "1.0.0",
-  "description": "シンプルなHello Worldを表示するWebアプリケーション",
+  "description": "シンプルなHello Worldを表示するWebアプリケーション（おみくじ機能付き）",
   "main": "script.js",
   "scripts": {
     "test": "jest",
