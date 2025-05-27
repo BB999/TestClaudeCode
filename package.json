@@ -1,7 +1,7 @@
 {
-  "name": "hello-world-webapp",
+  "name": "omikuji-webapp",
   "version": "1.0.0",
-  "description": "シンプルなHello Worldを表示するWebアプリケーション",
+  "description": "日本の伝統的なおみくじ体験を提供するWebアプリケーション",
   "main": "script.js",
   "scripts": {
     "test": "jest",
@@ -13,11 +13,14 @@
     "lint": "echo 'No linter configured'"
   },
   "keywords": [
-    "hello-world",
+    "omikuji",
+    "fortune-telling",
+    "japanese-culture",
     "web-application",
     "javascript",
     "html",
-    "css"
+    "css",
+    "tdd"
   ],
   "author": "BB999",
   "license": "MIT",
@@ -31,6 +34,7 @@
     "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
     "collectCoverageFrom": [
       "script.js",
+      "omikuji.js",
       "!node_modules/**"
     ],
     "coverageThreshold": {

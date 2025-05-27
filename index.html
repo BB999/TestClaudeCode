@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="シンプルなHello Worldを表示するWebアプリケーション">
-    <title>Hello World - Web Application</title>
+    <meta name="description" content="おみくじWebアプリケーション - 日本の伝統的なおみくじ体験">
+    <title>おみくじ - Web Application</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container" role="main">
         <div class="content">
-            <h1 id="main-text" class="main-text" aria-label="Hello World">Hello World</h1>
+            <h1 id="main-text" class="main-text" aria-label="おみくじアプリ">おみくじアプリ</h1>
             <p id="datetime-text" class="datetime-text" aria-live="polite"></p>
+            
+            <!-- おみくじセクション -->
+            <section class="omikuji-section" aria-labelledby="omikuji-title">
+                <h2 id="omikuji-title" class="section-title">今日の運勢を占ってみませんか？</h2>
+                
+                <button id="draw-omikuji-btn" class="omikuji-button" aria-describedby="omikuji-description">
+                    おみくじを引く
+                </button>
+                <p id="omikuji-description" class="sr-only">クリックするとおみくじを引いて、今日の運勢を占うことができます。</p>
+                
+                <!-- 結果表示エリア -->
+                <div id="omikuji-result" class="omikuji-result" role="region" aria-labelledby="result-title" aria-live="polite">
+                    <h3 id="result-title" class="result-title">今日のあなたの運勢</h3>
+                    <div class="fortune-level" id="fortune-level"></div>
+                    <div class="detailed-fortune" id="detailed-fortune"></div>
+                    <div class="advice-section">
+                        <h4>今日のアドバイス</h4>
+                        <p id="advice-text"></p>
+                    </div>
+                    <div class="lucky-items">
+                        <div class="lucky-item">
+                            <span class="label">開運アイテム:</span>
+                            <span id="lucky-item"></span>
+                        </div>
+                        <div class="lucky-color">
+                            <span class="label">ラッキーカラー:</span>
+                            <span id="lucky-color"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 履歴セクション -->
+                <section class="history-section" aria-labelledby="history-title">
+                    <h3 id="history-title" class="section-title">過去の運勢履歴</h3>
+                    <button id="toggle-history-btn" class="toggle-button">履歴を表示</button>
+                    <div id="history-container" class="history-container" role="region" aria-live="polite">
+                    </div>
+                </section>
+            </section>
         </div>
     </main>
+    <script src="omikuji.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

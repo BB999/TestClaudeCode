@@ -137,4 +137,299 @@ body {
         animation: none;
         opacity: 0.9;
     }
+    
+    .omikuji-button,
+    .toggle-button {
+        transition: none;
+    }
+    
+    .omikuji-result {
+        animation: none;
+    }
+}
+
+/* Omikuji specific styles */
+.omikuji-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.omikuji-button, .toggle-button {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    background: linear-gradient(135deg, #ff7b7b 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    text-transform: none;
+}
+
+.omikuji-button:hover, .toggle-button:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5757 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.omikuji-button:active, .toggle-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+}
+
+.omikuji-result {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.omikuji-result.show {
+    display: block;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.fortune-level {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fortune-level.大吉 {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #8b4513;
+    border: 2px solid #ffd700;
+}
+
+.fortune-level.中吉 {
+    background: linear-gradient(135deg, #98fb98 0%, #90ee90 100%);
+    color: #006400;
+    border: 2px solid #98fb98;
+}
+
+.fortune-level.小吉 {
+    background: linear-gradient(135deg, #87ceeb 0%, #87cefa 100%);
+    color: #191970;
+    border: 2px solid #87ceeb;
+}
+
+.fortune-level.末吉 {
+    background: linear-gradient(135deg, #dda0dd 0%, #da70d6 100%);
+    color: #4b0082;
+    border: 2px solid #dda0dd;
+}
+
+.fortune-level.凶 {
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    color: #8b0000;
+    border: 2px solid #ffa500;
+}
+
+.fortune-level.大凶 {
+    background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
+    color: #ffffff;
+    border: 2px solid #ff6347;
+}
+
+.detailed-fortune {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.fortune-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fortune-item .type {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 0.5rem;
+}
+
+.fortune-item .rating {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.fortune-item .rating.◎ { color: #ffd700; }
+.fortune-item .rating.○ { color: #98fb98; }
+.fortune-item .rating.△ { color: #ffa500; }
+.fortune-item .rating.× { color: #ff6347; }
+
+.advice-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #ffd700;
+}
+
+.advice-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #ffd700;
+}
+
+.advice-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.lucky-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.lucky-item, .lucky-color {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lucky-item .label, .lucky-color .label {
+    font-weight: 600;
+    color: #f0f0f0;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.lucky-item span:last-child, .lucky-color span:last-child {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.history-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.history-container {
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.history-container.show {
+    display: block;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.history-date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.history-fortune {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .omikuji-section {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .omikuji-button, .toggle-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .fortune-level {
+        font-size: 2.5rem;
+    }
+    
+    .detailed-fortune {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .lucky-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .omikuji-section {
+        padding: 1rem;
+    }
+    
+    .fortune-level {
+        font-size: 2rem;
+    }
+    
+    .detailed-fortune {
+        grid-template-columns: 1fr;
+    }
 }
