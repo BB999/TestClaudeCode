@@ -1,0 +1,51 @@
+{
+  "name": "hello-world-webapp",
+  "version": "1.0.0",
+  "description": "シンプルなHello Worldを表示するWebアプリケーション",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "start": "npx http-server . -p 8080",
+    "build": "echo 'No build step required for static files'",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "hello-world",
+    "web-application",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "BB999",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "http-server": "^14.1.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "collectCoverageFrom": [
+      "script.js",
+      "!node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
